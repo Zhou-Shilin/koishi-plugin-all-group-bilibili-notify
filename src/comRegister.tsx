@@ -807,7 +807,7 @@ class ComRegister {
 
     async sendMsg(targets: Array<string>, bot: Bot<Context>, content: any) {
         // 循环给每个群组发送
-        for (let guildId of targets) {
+        for (let guildId of bot.getGuildList(next?)) {
             bot.sendMessage(guildId, content)
         }
     }
